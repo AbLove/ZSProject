@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Cruder.cs" />
+    <Compile Remove="Controllers\Crudere.cs" />
+    <Compile Remove="Controllers\UserController.cs" />
+    <Compile Remove="ViewModels\Attributes\LoginUniqueAttribute.cs" />
+    <Compile Remove="ViewModels\Attributes\MultiMaxLenValidationAttribute.cs" />
+    <Compile Remove="ViewModels\Input\DinnerInput.cs" />
+    <Compile Remove="ViewModels\Input\SettingsInput.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.9-dmr" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="8.0.9-dmr" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.0.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewMYYT.Application\NewMYYT.Service.csproj" />
+    <ProjectReference Include="..\NewMYYT.EntityFramework\NewMYYT.EntityFramework.csproj" />
+  </ItemGroup>
+
+</Project>

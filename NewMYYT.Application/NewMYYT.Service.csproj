@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>NewMYYT.Service</RootNamespace>
+    <AssemblyName>NewMYYT.Service</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CrudService.cs" />
+    <Compile Remove="FileManagerService.cs" />
+    <Compile Remove="MealService.cs" />
+    <Compile Remove="ServiceModule.cs" />
+    <Compile Remove="TestUserService.cs" />
+    <Compile Remove="UserService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewMYYT.Core\NewMYYT.Core.csproj" />
+    <ProjectReference Include="..\NewMYYT.EntityFramework\NewMYYT.EntityFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.0.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.Encrypto">
+      <HintPath>..\..\..\BaiduNetdiskDownload\netpro\prodinner\libs\Omu.Encrypto.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

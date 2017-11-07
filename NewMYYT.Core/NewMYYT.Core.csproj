@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service\ICrudService.cs" />
+    <Compile Remove="Service\IFileManagerService.cs" />
+    <Compile Remove="Service\IMealService.cs" />
+    <Compile Remove="Service\ITestUserService.cs" />
+    <Compile Remove="Service\IUserService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Security\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
