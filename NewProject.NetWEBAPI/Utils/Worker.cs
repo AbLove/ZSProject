@@ -25,8 +25,8 @@ namespace NewProject.NetWEBAPI.Utils
             {
                 using (var r = new Db())
                 {
-                    if (r.Users.Count() == 0)
-                    {
+                    //if (r.Users.Count() == 0)
+                    //{
 
                         //var us = r.Users.AddRange(new List<User> {
                         //                                new User { Login = "admin", Password = "123", Roles = new List<Role> { new Role { Name = "administrator" } } }
@@ -34,7 +34,7 @@ namespace NewProject.NetWEBAPI.Utils
                         //                                           }
                         //                                );
                         //r.SaveChanges();
-                    }
+                   // }
                 }
             }
             catch (Exception ex)

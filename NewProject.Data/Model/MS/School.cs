@@ -1,4 +1,4 @@
-namespace NewProject.ConsoleData.Model
+namespace NewProject.Data.Model.MS
 {
     using System;
     using System.Collections.Generic;
@@ -42,13 +42,13 @@ namespace NewProject.ConsoleData.Model
 
         public int? Statue { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string Proviance { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string City { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string Area { get; set; }
     }
 }

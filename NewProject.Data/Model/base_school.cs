@@ -16,17 +16,26 @@ namespace Model
     public partial class base_school
     {
         [Key]
-        public long school_id { get; set; }
+        public int school_id { get; set; }
+        [MaxLength(100)]
         public string school_name { get; set; }
         public string type { get; set; }
+        [MaxLength(100)]
         public string province { get; set; }
+        [MaxLength(100)]
         public string county { get; set; }
+        [MaxLength(100)]
         public string city { get; set; }
+        [MaxLength(255)]
         public string address { get; set; }
+        [MaxLength(100)]
         public string longitude { get; set; }
+        [MaxLength(100)]
         public string latitude { get; set; }
+        [MaxLength(100)]
         public string phone_number { get; set; }
-        public long dealer_id { get; set; }
+        public int? dealer_id { get; set; }
+        [MaxLength(255)]
         public string description { get; set; }
 
 

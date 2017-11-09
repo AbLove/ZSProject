@@ -16,10 +16,10 @@ namespace Model
     public partial class base_class
     {
         [Key]
-        public long class_id { get; set; }
+        public int class_id { get; set; }
         [MaxLength(100)]
         public string class_name { get; set; }
-        public long school_id { get; set; }
+        public int school_id { get; set; }
         [MaxLength(255)]
         public string description { get; set; }
     }

@@ -16,7 +16,7 @@ namespace Model
     public partial class base_teacher
     {
         [Key]
-        public long teacher_id { get; set; }
+        public int teacher_id { get; set; }
         [MaxLength(100)]
         public string teacher_name { get; set; }
         [MaxLength(100)]
@@ -25,8 +25,8 @@ namespace Model
         public string birthday { get; set; }
         [MaxLength(100)]
         public string address { get; set; }
-        public long class_id { get; set; }
-        public long school_id { get; set; }
+        public int class_id { get; set; }
+        public int school_id { get; set; }
         [MaxLength(255)]
         public string description { get; set; }
     }

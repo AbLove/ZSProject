@@ -16,7 +16,7 @@ namespace Model
     public partial class base_student
     {
         [Key]
-        public long student_id { get; set; }
+        public int student_id { get; set; }
         [MaxLength(100)]
         public string student_name { get; set; }
         [MaxLength(100)]
@@ -29,10 +29,8 @@ namespace Model
         public string weight { get; set; }
         [MaxLength(100)]
         public string address { get; set; }
-        [MaxLength(10)]
-        public long class_id { get; set; }
-        [MaxLength(10)]
-        public long school_id { get; set; }
+        public int class_id { get; set; }
+        public int school_id { get; set; }
         [MaxLength(100)]
         public string bracelet_id { get; set; }
         public System.DateTime create_time { get; set; }

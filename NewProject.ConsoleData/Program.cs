@@ -16,12 +16,14 @@ namespace NewProject.ConsoleData
         {
             Console.WriteLine("正在执行操作....");
             var schs = new List<Model.School>();
-            //schs = GetList();
-            foreach (var item in GetMysqlSchool())
-            {
-                schs.Add(new Model.School { ID = Convert.ToInt32(item.school_id), Name = item.school_name, Type = item.type, Address = item.address, Tel = item.phone_number, Descp = item.description, Proviance = item.province, City = item.city, Area = item.county });
-            }
-            //AddMssqlSchool(schs);
+            var mlist = GetMysqlSchool();
+            var item = mlist[2];
+            schs.Add(new Model.School { ID = item.school_id, Name = item.school_name, Type = item.type, Address = item.address, Tel = item.phone_number, Descp = item.description, Proviance = item.province, City = item.city, Area = item.county });
+            //foreach (var item in GetMysqlSchool())
+            //{
+            //    schs.Add(new Model.School { ID = Convert.ToInt32(item.school_id), Name = item.school_name, Type = item.type, Address = item.address, Tel = item.phone_number, Descp = item.description, Proviance = item.province, City = item.city, Area = item.county });
+            //}
+            AddMssqlSchool(schs);
             Console.WriteLine("操作已完成");
             Console.ReadKey();
         }
