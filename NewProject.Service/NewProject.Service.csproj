@@ -47,6 +47,7 @@
     <Compile Include="CrudService.cs" />
     <Compile Include="FileManagerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +57,10 @@
     <ProjectReference Include="..\NewProject.Data\NewProject.Data.csproj">
       <Project>{01AB20F1-5D81-4AD1-AE5C-D937ED5590CC}</Project>
       <Name>NewProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewProject.EntityFramework\NewProject.EntityFramework.csproj">
+      <Project>{0C4D22D9-AE52-4B9B-96D0-C1CCD4AC301C}</Project>
+      <Name>NewProject.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

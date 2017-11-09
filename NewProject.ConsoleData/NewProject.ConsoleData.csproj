@@ -33,10 +33,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.10\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.10\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -54,28 +60,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Class.cs" />
-    <Compile Include="Model\MSsql.cs" />
-    <Compile Include="Model\School.cs" />
-    <Compile Include="Model\Student.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Db.cs" />
+    <Compile Include="Model\MS\Class.cs" />
+    <Compile Include="Model\MS\School.cs" />
+    <Compile Include="Model\MS\Student.cs" />
+    <Compile Include="Model\MS\User.cs" />
+    <Compile Include="Model\MY\base_class.cs" />
+    <Compile Include="Model\MY\base_school.cs" />
+    <Compile Include="Model\MY\base_student.cs" />
+    <Compile Include="Model\MY\base_teacher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NewProject.Data\NewProject.Data.csproj">
-      <Project>{01AB20F1-5D81-4AD1-AE5C-D937ED5590CC}</Project>
-      <Name>NewProject.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NewProject.EntityFramework\NewProject.EntityFramework.csproj">
-      <Project>{0C4D22D9-AE52-4B9B-96D0-C1CCD4AC301C}</Project>
-      <Name>NewProject.EntityFramework</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

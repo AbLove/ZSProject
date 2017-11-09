@@ -1,11 +1,10 @@
 ﻿//using Model;
+using NewProject.Data.Model;
 using NewProject.Data.Model.MS;
 using NewProject.EntityFramework;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 
 namespace NewProject.NetWEBAPI.Utils
 {
@@ -15,19 +14,19 @@ namespace NewProject.NetWEBAPI.Utils
         private static readonly MysqlDb mydb = new MysqlDb();
         #region 查询mysql数据
 
-        public static List<Model.base_teacher> GetMysqlTeacher()
+        public static List<base_teacher> GetMysqlTeacher()
         {
             return mydb.b_teas.Where(t => true).ToList();
         }
-        public static List<Model.base_student> GetMysqlStu()
+        public static List<base_student> GetMysqlStu()
         {
             return mydb.b_stus.Where(t => true).ToList();
         }
-        public static List<Model.base_school> GetMysqlSchool()
+        public static List<base_school> GetMysqlSchool()
         {
             return mydb.b_schs.Where(t => true).ToList();
         }
-        public static List<Model.base_class> GetMysqlCls()
+        public static List<base_class> GetMysqlCls()
         {
             return mydb.b_cls.Where(t => true).ToList();
         }

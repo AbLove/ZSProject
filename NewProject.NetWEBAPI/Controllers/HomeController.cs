@@ -1,21 +1,22 @@
 ﻿using NewProject.Data.IService;
 using NewProject.Data.Model;
 using NewProject.Data.Model.MS;
-using NewProject.EntityFramework;
-using NewProject.NetWEBAPI.Utils;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace NewProject.NetWEBAPI.Controllers
 {
     public class HomeController : Controller
     {
-        // private readonly IUserService _Service;
-        //public HomeController(IUserService _Service)
-        //{
-        //    this._Service = _Service;
-        //}
+        private readonly ICrudService<Users> _Service;
+        private readonly ICrudService<Projects> _pService;
+
+        public HomeController(ICrudService<Users> _Service, ICrudService<Projects> _pService)
+        {
+            this._Service = _Service;
+            this._pService = _pService;
+        }
+
 
 
         public ActionResult Index()
@@ -43,22 +44,27 @@ namespace NewProject.NetWEBAPI.Controllers
             //}
             //DataMigrations.AddMssqlStu(schs);
 
-            var mlist = DataMigrations.GetMysqlTeacher();
-            var i = 0;
-            foreach (var item in mlist)
-            {
+            //var mlist = DataMigrations.GetMysqlTeacher();
+            //var i = 0;
+            //foreach (var item in mlist)
+            //{
 
-                schs.Add(new User { UserID = System.Guid.NewGuid(), Name = "mysqlteachar" + (i++), ClassID = item.class_id, CreateDate = System.DateTime.Now, RoleID = 5, Password = "MTExMTEx", NickName = item.teacher_name, SchoolID = item.school_id, District = item.address });
-            }
-            DataMigrations.AddMssqlTeacher(schs);
+            //    schs.Add(new User { UserID = System.Guid.NewGuid(), Name = "mysqlteachar" + (i++), ClassID = item.class_id, CreateDate = System.DateTime.Now, RoleID = 5, Password = "MTExMTEx", NickName = item.teacher_name, SchoolID = item.school_id, District = item.address });
+            //}
+            //DataMigrations.AddMssqlTeacher(schs);
+
+            var s = _Service.GetAll();
             ViewBag.Title = "Home Page";
             return View();
         }
         public ActionResult List()
         {
-
-            ViewBag.Title = "Home Page";
-            return View(new List<NUser>());
+            var s = _Service.GetAll();
+            return View(s);
+        }
+        public ActionResult ProList() {
+            var p = _pService.GetAll();
+            return View(p);
         }
     }
 }

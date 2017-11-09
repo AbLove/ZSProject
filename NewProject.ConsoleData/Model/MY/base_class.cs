@@ -7,24 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Model
+namespace NewProject.ConsoleData.Model.MY
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class Class
+    public partial class base_class
     {
-        public int ClassID { get; set; }
-        public Nullable<int> SchoolID { get; set; }
-
+        [Key]
+        public int class_id { get; set; }
         [MaxLength(100)]
-        public string ClassName { get; set; }
-        [MaxLength(100)]
-        public string ClassType { get; set; }
-        public Nullable<int> State { get; set; }
-        [MaxLength(100)]
-
-        public string Grade { get; set; }
+        public string class_name { get; set; }
+        public int school_id { get; set; }
+        [MaxLength(255)]
+        public string description { get; set; }
     }
 }

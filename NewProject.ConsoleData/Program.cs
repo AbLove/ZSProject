@@ -1,6 +1,6 @@
-﻿using Model;
-using NewProject.ConsoleData.Model;
-using NewProject.EntityFramework;
+﻿using NewProject.ConsoleData.Model;
+using NewProject.ConsoleData.Model.MS;
+using NewProject.ConsoleData.Model.MY;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +9,16 @@ namespace NewProject.ConsoleData
 {
     class Program
     {
-        private static readonly MSsql db = new MSsql();
+        private static readonly MSsqlDb db = new MSsqlDb();
         private static readonly MysqlDb mydb = new MysqlDb();
 
         static void Main(string[] args)
         {
             Console.WriteLine("正在执行操作....");
-            var schs = new List<Model.School>();
+            var schs = new List<School>();
             var mlist = GetMysqlSchool();
-            var item = mlist[2];
-            schs.Add(new Model.School { ID = item.school_id, Name = item.school_name, Type = item.type, Address = item.address, Tel = item.phone_number, Descp = item.description, Proviance = item.province, City = item.city, Area = item.county });
-            //foreach (var item in GetMysqlSchool())
-            //{
-            //    schs.Add(new Model.School { ID = Convert.ToInt32(item.school_id), Name = item.school_name, Type = item.type, Address = item.address, Tel = item.phone_number, Descp = item.description, Proviance = item.province, City = item.city, Area = item.county });
-            //}
-            AddMssqlSchool(schs);
+            //AddMssqlSchool(schs);
+            var s = GetList();
             Console.WriteLine("操作已完成");
             Console.ReadKey();
         }
@@ -49,28 +44,52 @@ namespace NewProject.ConsoleData
         #endregion
 
         #region 同步到mssql
-        static List<Model.School> GetList()
+        static List<School> GetList()
         {
-            return db.School.ToList();
+            return db.Schools.ToList();
         }
 
-        static void AddMssqlTeacher(List<Model.User> users)
-        {
-            db.User.AddRange(users);
-            db.SaveChanges();
-        }
-        static void AddMssqlStu(List<Model.Student> stus)
-        {
-            db.Student.AddRange(stus);
-            db.SaveChanges();
-        }
-        static void AddMssqlSchool(List<Model.School> schs)
+        static void AddMssqlTeacher(List<User> users)
         {
             using (var scope = db.Database.BeginTransaction())
             {
                 try
                 {
-                    db.School.AddRange(schs);
+                    db.Users.AddRange(users);
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    scope.Rollback();
+                    throw;
+                }
+            }
+        }
+        static void AddMssqlStu(List<Student> stus)
+        {
+            using (var scope = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    db.Students.AddRange(stus);
+                    db.SaveChanges();
+                    scope.Commit();
+
+                }
+                catch (Exception)
+                {
+                    scope.Rollback();
+                    throw;
+                }
+            }
+        }
+        static void AddMssqlSchool(List<School> schs)
+        {
+            using (var scope = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    db.Schools.AddRange(schs);
                     db.SaveChanges();
                     scope.Commit();
                 }
@@ -82,10 +101,22 @@ namespace NewProject.ConsoleData
             }
 
         }
-        static void AddMssqlCls(List<Model.Class> cls)
+        static void AddMssqlCls(List<Class> cls)
         {
-            db.Class.AddRange(cls);
-            db.SaveChanges();
+            using (var scope = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    db.Classes.AddRange(cls);
+                    db.SaveChanges();
+                    scope.Commit();
+                }
+                catch (Exception)
+                {
+                    scope.Rollback();
+                    throw;
+                }
+            }
         }
         #endregion
     }

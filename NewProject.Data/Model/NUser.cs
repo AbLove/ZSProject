@@ -12,7 +12,9 @@ namespace NewProject.Data.Model
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
+    [Table("User")]
     public partial class NUser : DelEntity
     {
         [MaxLength(100)]
@@ -21,7 +23,7 @@ namespace NewProject.Data.Model
         public string Login { get; set; }
         [MaxLength(100)]
         public string Password { get; set; }
-        public Nullable<int> RoleID { get; set; }
+        public virtual ICollection<Role> RoleID { get; set; }
         [MaxLength(100)]
         public string Email { get; set; }
         [MaxLength(100)]

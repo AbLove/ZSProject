@@ -5,8 +5,8 @@ namespace NewProject.Data.Model
 {
     public class Role : Entity
     {
-        //[MaxLength(100)]
+        [MaxLength(100)]
         public string Name { get; set; }
-        //public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<NUser> Users { get; set; }
     }
 }

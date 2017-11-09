@@ -1,4 +1,4 @@
-namespace NewProject.ConsoleData.Model
+namespace NewProject.ConsoleData.Model.MS
 {
     using System;
     using System.Collections.Generic;

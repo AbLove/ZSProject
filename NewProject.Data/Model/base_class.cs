@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Model
+namespace NewProject.Data.Model
 {
     using System;
     using System.Collections.Generic;

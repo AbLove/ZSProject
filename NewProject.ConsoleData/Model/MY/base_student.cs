@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NewProject.Data.Model
+namespace NewProject.ConsoleData.Model.MY
 {
     using System;
     using System.Collections.Generic;

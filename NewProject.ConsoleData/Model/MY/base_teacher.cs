@@ -7,37 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NewProject.Data.Model
+namespace NewProject.ConsoleData.Model.MY
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class base_school
+    public partial class base_teacher
     {
         [Key]
-        public int school_id { get; set; }
+        public int teacher_id { get; set; }
         [MaxLength(100)]
-        public string school_name { get; set; }
-        public string type { get; set; }
+        public string teacher_name { get; set; }
         [MaxLength(100)]
-        public string province { get; set; }
+        public string sex { get; set; }
         [MaxLength(100)]
-        public string county { get; set; }
+        public string birthday { get; set; }
         [MaxLength(100)]
-        public string city { get; set; }
-        [MaxLength(255)]
         public string address { get; set; }
-        [MaxLength(100)]
-        public string longitude { get; set; }
-        [MaxLength(100)]
-        public string latitude { get; set; }
-        [MaxLength(100)]
-        public string phone_number { get; set; }
-        public int? dealer_id { get; set; }
+        public int class_id { get; set; }
+        public int school_id { get; set; }
         [MaxLength(255)]
         public string description { get; set; }
-
-
     }
 }
