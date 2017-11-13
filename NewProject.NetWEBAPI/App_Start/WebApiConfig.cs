@@ -15,8 +15,9 @@ namespace NewProject.NetWEBAPI
             // Web API 配置和服务
             var container = new UnityContainer();
             //container.RegisterType<IUserService, UserService>();
-            container.RegisterType<ITestService, TestService>();
             container.RegisterType<IRepo<DelEntity>, Repo<DelEntity>>();
+            container.RegisterType<ITestService<Users>, TestService<Users>>();
+            container.RegisterType<ITestService<base_school>, TestService<base_school>>();
             config.DependencyResolver = new Utils.UnityResolver(container);
             // Web API 路由
             config.MapHttpAttributeRoutes();

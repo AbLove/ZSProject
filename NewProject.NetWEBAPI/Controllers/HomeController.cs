@@ -1,6 +1,8 @@
 ﻿using NewProject.Data.IService;
 using NewProject.Data.Model;
 using NewProject.Data.Model.MS;
+using NewProject.NetWEBAPI.Utils;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -59,6 +61,15 @@ namespace NewProject.NetWEBAPI.Controllers
         }
         public ActionResult List()
         {
+            try
+            {
+                var ss = Convert.ToInt16("asd");
+            }
+            catch (System.Exception ex)
+            {
+                ex.Log();
+                //throw;
+            }
             var s = _Service.GetAll();
             return View(s);
         }

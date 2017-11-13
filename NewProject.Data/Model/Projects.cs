@@ -2,7 +2,7 @@
 
 namespace NewProject.Data.Model
 {
-    public class Projects:DelEntity
+    public class Projects : DelEntity
     {
         [MaxLength(50)]
         public string Name { get; set; }

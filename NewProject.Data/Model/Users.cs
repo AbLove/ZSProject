@@ -5,7 +5,6 @@ namespace NewProject.Data.Model
 {
     public class Users : DelEntity
     {
-        public int Id { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
         public bool Sex { get; set; }

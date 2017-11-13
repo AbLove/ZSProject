@@ -4,12 +4,11 @@ namespace NewProject.Data.Model.MS
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("myc.Class")]
     public partial class Class
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ClassID { get; set; }
 
         public int? SchoolID { get; set; }

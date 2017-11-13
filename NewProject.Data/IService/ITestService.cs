@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace NewProject.Data.IService
 {
-    public interface ITestService
+    public interface ITestService<T> where T : new()
     {
-        List<NUser> Get();
+        List<T> Get();
     }
 }

@@ -4,7 +4,6 @@ namespace NewProject.Data.Model.MS
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("myc.User")]
     public partial class User
