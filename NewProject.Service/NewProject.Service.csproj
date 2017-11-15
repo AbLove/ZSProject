@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CrudService.cs" />
     <Compile Include="FileManagerService.cs" />
+    <Compile Include="AuthenticationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestService.cs" />
     <Compile Include="UserService.cs" />
@@ -54,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetProject.Common\NetProject.Common.csproj">
+      <Project>{865032B7-A560-4417-A455-21DC2C4834FC}</Project>
+      <Name>NetProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NewProject.Data\NewProject.Data.csproj">
       <Project>{01AB20F1-5D81-4AD1-AE5C-D937ED5590CC}</Project>
       <Name>NewProject.Data</Name>

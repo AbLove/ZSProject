@@ -4,7 +4,7 @@ namespace NewProject.Data.Model
 {
     public class Entity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
     }
 }

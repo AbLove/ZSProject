@@ -1,19 +1,21 @@
-﻿using NewProject.Data.IService;
+﻿using NewProject.Common;
+using NewProject.Data.IService;
 using NewProject.Data.Model;
+using NewProject.Data.Repository;
 using System.Collections.Generic;
 
 namespace NewProject.Service
 {
-    public class TestService<T> : ITestService<T> where T : new()
+    public class TestService<T> : ITestService<T> where T : Entity,new ()
     {
-        //private readonly IRepo<NUser> _IRepo;
-        //public TestService(IRepo<NUser> _IRepo)
+        //private readonly IRepo<T> _IRepo;
+        //public TestService(IRepo<T> _IRepo)
         //{
         //    this._IRepo = _IRepo;
         //}
-        public List<T> Get()
+        public IEnumerable<T> Get()
         {
-            //return this._IRepo.Where(t => true).ToList();
+            return IoC.Resolve<IRepo<T>>().Where(t => true);
             if (typeof(T) == typeof(string))
             {
                 return new List<string> { "1", "2", "3", "4", "5" } as List<T>;

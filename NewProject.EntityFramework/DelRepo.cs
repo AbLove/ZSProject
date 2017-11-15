@@ -21,6 +21,7 @@ namespace NewProject.EntityFramework
         }
         public IQueryable<T> Where(Expression<Func<T, bool>> predicate, bool showDeleted = false)
         {
+
             var res = dbContext.Set<T>().Where(predicate);
             if (!showDeleted) res = res.Where(o => o.IsDeleted == false);
             return res;

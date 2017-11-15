@@ -11,6 +11,8 @@ namespace NewProject.Data.Model
         public int Age { get; set; }
         [MaxLength(50)]
         public string NickName { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
 
         [MaxLength(100)]
         public string Address { get; set; }

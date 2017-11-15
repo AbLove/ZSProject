@@ -1,5 +1,4 @@
 ﻿using NewProject.Data.Model;
-using NewProject.Data.Model.MS;
 using System.Data.Entity;
 
 namespace NewProject.EntityFramework
@@ -8,12 +7,14 @@ namespace NewProject.EntityFramework
     {
         public Db() : base("Default")
         {
-            //Database.SetInitializer<Db>(null);
+            Database.SetInitializer<Db>(null);
         }
         public DbSet<NUser> NUsers { get; set; }
         public DbSet<Role> Students { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<Projects> Projects { get; set; }
+        public DbSet<UserDevice> UserDevice { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NUser>().HasMany(r => r.RoleID).WithMany(o => o.Users).Map(f =>
@@ -25,30 +26,7 @@ namespace NewProject.EntityFramework
         }
 
     }
-    public class MSsqlDb : DbContext
-    {
-        public MSsqlDb() : base("MssqlDefault")
-        {
-            //Database.SetInitializer<Db>(null);
-        }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Class> Classes { get; set; }
-
-        public DbSet<School> Schools { get; set; }
-
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<User>().HasMany(r => r.Roles).WithMany(o => o.Users).Map(f =>
-        //    {
-        //        f.MapLeftKey("UserId");
-        //        f.MapRightKey("RoleId");
-        //    });
-        //    base.OnModelCreating(modelBuilder);
-        //}
-
-    }
-
+  
     //[DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class MysqlDb : DbContext
     {

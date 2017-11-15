@@ -6,18 +6,18 @@ using System.Linq;
 
 namespace NewProject.Service
 {
-    public class UserService : CrudService<NUser>, IUserService
+    public class UserService : CrudService<Users>, IUserService
     {
         private readonly IHasher hasher;
 
-        public UserService(IRepo<NUser> repo, IHasher hasher)
+        public UserService(IRepo<Users> repo, IHasher hasher)
             : base(repo)
         {
             this.hasher = hasher;
             hasher.SaltSize = 10;
         }
 
-        public override int Create(NUser user)
+        public override int Create(Users user)
         {
             user.Password = hasher.Encrypt(user.Password);
             return base.Create(user);
@@ -28,7 +28,7 @@ namespace NewProject.Service
             return !repo.Where(o => o.Login == login, true).Any();
         }
 
-        public NUser Get(string login, string password)
+        public Users Get(string login, string password)
         {
             var user = repo.Where(o => o.Login == login && o.IsDeleted == false).FirstOrDefault();
             if (user == null || !hasher.CompareStringToHash(password, user.Password)) return null;

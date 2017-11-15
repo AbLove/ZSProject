@@ -19,12 +19,6 @@ namespace NewProject.EntityFramework
                 return this.table;
             }
         }
-
-        public Repo(DbContext dbContext)
-        {
-            this.dbContext = dbContext;
-            this.table = dbContext.Set<T>();
-        }
         public Repo(IDbContextFactory f)
         {
             dbContext = f.GetContext();
@@ -35,7 +29,7 @@ namespace NewProject.EntityFramework
         {
             dbContext.SaveChanges();
         }
-        
+
         public T Insert(T o)
         {
             var t = table.Create();
@@ -43,7 +37,7 @@ namespace NewProject.EntityFramework
             this.table.Add(t);
             return t;
         }
-       
+
         public virtual void Delete(T o)
         {
             if (o is IDel)

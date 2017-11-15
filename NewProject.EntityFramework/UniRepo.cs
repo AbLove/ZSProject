@@ -13,11 +13,6 @@ namespace NewProject.EntityFramework
         {
             c = a.GetContext();
         }
-        public UniRepo()
-        {
-            c = new Db();
-        }
-
         public T Insert<T>(T o) where T : Entity, new()
         {
             var t = new T();

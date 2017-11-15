@@ -1,10 +1,11 @@
-﻿using System;
+﻿using NewProject.Data.Model;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 
 namespace NewProject.Data.Repository
 {
-    public interface IRepo<T>
+    public interface IRepo<T> where T : Entity
     {
         T Get(int id);
         IQueryable<T> GetAll();
