@@ -282,6 +282,7 @@
     <Compile Include="Controllers\API\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\API\ValuesController.cs" />
+    <Compile Include="Filters\LogManage.cs" />
     <Compile Include="Filters\SessionValidateAttribute.cs" />
     <Compile Include="Filters\WebApiExceptionFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -366,9 +367,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetProject.Common\NeWProject.Common.csproj">
+    <ProjectReference Include="..\NewProject.Common\NewProject.Common.csproj">
       <Project>{865032B7-A560-4417-A455-21DC2C4834FC}</Project>
-      <Name>NeWProject.Common</Name>
+      <Name>NewProject.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\NewProject.Data\NewProject.Data.csproj">
       <Project>{01AB20F1-5D81-4AD1-AE5C-D937ED5590CC}</Project>

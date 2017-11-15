@@ -7,8 +7,8 @@
     <ProjectGuid>{865032B7-A560-4417-A455-21DC2C4834FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NetProject.Common</RootNamespace>
-    <AssemblyName>NetProject.Common</AssemblyName>
+    <RootNamespace>NewProject.Common</RootNamespace>
+    <AssemblyName>NewProject.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
