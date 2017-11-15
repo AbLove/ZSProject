@@ -366,9 +366,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetProject.Common\NetProject.Common.csproj">
+    <ProjectReference Include="..\NetProject.Common\NeWProject.Common.csproj">
       <Project>{865032B7-A560-4417-A455-21DC2C4834FC}</Project>
-      <Name>NetProject.Common</Name>
+      <Name>NeWProject.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\NewProject.Data\NewProject.Data.csproj">
       <Project>{01AB20F1-5D81-4AD1-AE5C-D937ED5590CC}</Project>

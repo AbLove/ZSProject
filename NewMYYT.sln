@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProject.Data", "NewProje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProject.EntityFramework", "NewProject.EntityFramework\NewProject.EntityFramework.csproj", "{0C4D22D9-AE52-4B9B-96D0-C1CCD4AC301C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetProject.Common", "NetProject.Common\NetProject.Common.csproj", "{865032B7-A560-4417-A455-21DC2C4834FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeWProject.Common", "NetProject.Common\NeWProject.Common.csproj", "{865032B7-A560-4417-A455-21DC2C4834FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProject.NetWEBAPI", "NewProject.NetWEBAPI\NewProject.NetWEBAPI.csproj", "{DF8E68A4-8008-488D-B9D9-E3EBA82941C3}"
 EndProject
